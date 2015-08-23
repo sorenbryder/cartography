@@ -1,0 +1,59 @@
+/*
+plugin.tx_cartography.persistence.classes.Tx_Cartography_Domain_Model_Map.mapping.tableName = tx_cartography_map
+plugin.tx_cartography {
+    persistence {
+        classes {
+            Point {
+                mapping {
+                    tableName = tx_cartography_point
+                }
+            }
+            AM\Cartography\Domain\Model\Map {
+                mapping {
+                    tableName = tx_cartography_map
+                }
+            }
+        }
+    }
+}
+*/
+
+config {
+    debug = 0
+    tx_extbase.persistence.classes {
+        AM\Cartography\Domain\Model\Map {
+            mapping {
+                tableName = tx_cartography_map
+            }
+        }
+        AM\Cartography\Domain\Model\Point {
+            mapping {
+                tableName = tx_cartography_point
+            }
+        }
+    }
+}
+
+geoJSON = PAGE
+geoJSON {
+    typeNum = 5000
+    config {
+        disableAllHeaderCode = 1
+        additionalHeaders = Content-type:application/json
+    }
+    10 = USER_INT
+    10 {
+        userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+        extensionName = Cartography
+        pluginName = Cartography
+        vendorName = AM
+        controller = Geometry
+        action = geoJSON
+        switchableControllerActions {
+            Geometry {
+                1 = geoJSON
+            }
+        }
+        //persistence < plugin.tx_cartography.persistence
+    }
+}

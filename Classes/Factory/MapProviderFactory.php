@@ -1,0 +1,1 @@
+// skal retunere et interface som kan kaldes i show action
