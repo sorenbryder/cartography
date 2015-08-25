@@ -1,9 +1,9 @@
 <?php
 defined('TYPO3_MODE') or die();
 
-$tx_cartography_point = array(
+$tx_cartography_feature = array(
     'ctrl' => array(
-        'title' => 'Point',
+        'title' => 'Feature',
         'label' => 'title',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -30,40 +30,13 @@ $tx_cartography_point = array(
                 'eval' => 'trim'
             )
         ),
-        'latitude' => array(
-            'label' => 'Latitude',
-            'config' => array(
-                'type' => 'input',
-                'size' => '20',
-                'max' => '12',
-                'eval' => 'trim,required'
-            )
-        ),
-        'longitude' => array(
-            'label' => 'Longitude',
-            'config' => array(
-                'type' => 'input',
-                'size' => '20',
-                'max' => '12',
-                'eval' => 'trim,required'
-            )
-        ),
-        'altitude' => array(
-            'label' => 'Altitude',
-            'config' => array(
-                'type' => 'input',
-                'size' => '20',
-                'max' => '12',
-                'eval' => 'trim,required'
-            )
-        ),
         'maps' => array(
             'label' => 'Maps',
             'config' => array(
                 'type' => 'select',
                 'allowed' => 'tx_cartography_map',
                 'foreign_table' => 'tx_cartography_map',
-                'MM' => 'tx_cartography_map_point_mm',
+                'MM' => 'tx_cartography_map_feature_mm',
                 'size' => 10,
                 'minitems' => 0,
                 'maxitems' => 9999
@@ -74,7 +47,7 @@ $tx_cartography_point = array(
             'config' => array(
                 'type' => 'inline',
                 'foreign_table' => 'tt_content',
-                'foreign_field' => 'tx_cartography_point',
+                'foreign_field' => 'tx_cartography_feature',
                 'appearance' => array(
                     'useSortable' => TRUE,
                     'showSynchronizationLink' => TRUE,
@@ -169,8 +142,8 @@ $tx_cartography_point = array(
         )
     ),
     'types' => array(
-        '0' => array('showitem' => '--div--;LLL:EXT:cartography/Resources/Private/Language/locallang_db.xlf:cartography_map.tabs.general, title, latitude, longitude, altitude, maps, infowindow_item, --div--;LLL:EXT:cartography/Resources/Private/Language/locallang_db.xlf:cartographys_map.tabs.access, hidden, starttime, endtime, editlock, fe_group')
+        '0' => array('showitem' => '--div--;LLL:EXT:cartography/Resources/Private/Language/locallang_db.xlf:cartography_map.tabs.general, title, maps, infowindow_item, --div--;LLL:EXT:cartography/Resources/Private/Language/locallang_db.xlf:cartographys_map.tabs.access, hidden, starttime, endtime, editlock, fe_group')
     )
 );
 
-return $tx_cartography_point;
+return $tx_cartography_feature;

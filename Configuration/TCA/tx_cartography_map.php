@@ -30,13 +30,13 @@ $tx_cartography_map = array(
                 'eval' => 'trim'
             )
         ),
-        'points' => array(
-            'label' => 'Markers',
+        'features' => array(
+            'label' => 'Features',
             'config' => array(
                 'type' => 'select',
-                'allowed' => 'tx_cartography_point',
-                'foreign_table' => 'tx_cartography_point',
-                'MM' => 'tx_cartography_map_point_mm',
+                'allowed' => 'tx_cartography_feature',
+                'foreign_table' => 'tx_cartography_feature',
+                'MM' => 'tx_cartography_map_feature_mm',
                 'MM_opposite_field' => 'maps',
                 'size' => 10,
                 'maxitems' => 9999
@@ -118,7 +118,7 @@ $tx_cartography_map = array(
         ),
     ),
     'types' => array(
-        '0' => array('showitem' => '--div--;LLL:EXT:cartography/Resources/Private/Language/locallang_db.xlf:cartography_map.tabs.general, title, points, --div--;LLL:EXT:cartography/Resources/Private/Language/locallang_db.xlf:tx_cartography_map.tabs.access, hidden, starttime, endtime, editlock, fe_group')
+        '0' => array('showitem' => '--div--;LLL:EXT:cartography/Resources/Private/Language/locallang_db.xlf:cartography_map.tabs.general, title, features, --div--;LLL:EXT:cartography/Resources/Private/Language/locallang_db.xlf:tx_cartography_map.tabs.access, hidden, starttime, endtime, editlock, fe_group')
     )
 );
 

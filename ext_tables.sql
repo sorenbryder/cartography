@@ -19,7 +19,7 @@ CREATE TABLE tx_cartography_map (
 	cruser_id int(11) unsigned DEFAULT '0' NOT NULL,
 	hidden tinyint(4) unsigned DEFAULT '0' NOT NULL,
 	title varchar(255) DEFAULT '' NOT NULL,
-	points int(11) DEFAULT '0' NOT NULL,
+	features int(11) DEFAULT '0' NOT NULL,
 	starttime int(11) unsigned DEFAULT '0' NOT NULL,
 	endtime int(11) unsigned DEFAULT '0' NOT NULL,
 	fe_group varchar(100) DEFAULT '0' NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE tx_cartography_map (
 	KEY parent (pid,deleted,sorting)
 );
 
-CREATE TABLE tx_cartography_point (
+CREATE TABLE tx_cartography_feature (
 	uid int(11) NOT NULL auto_increment,
 	pid int(11) DEFAULT '0' NOT NULL,
 	t3ver_oid int(11) DEFAULT '0' NOT NULL,
@@ -51,9 +51,6 @@ CREATE TABLE tx_cartography_point (
 	title varchar(255) DEFAULT '' NOT NULL,
 	maps int(11) DEFAULT '0' NOT NULL,
 	infowindow_item int(11) unsigned DEFAULT '0',
-	latitude varchar(255) DEFAULT '' NOT NULL,
-	longitude varchar(255) DEFAULT '' NOT NULL,
-	altitude varchar (255) DEFAULT '' NOT NULL,
 	starttime int(11) unsigned DEFAULT '0' NOT NULL,
 	endtime int(11) unsigned DEFAULT '0' NOT NULL,
 	fe_group varchar(100) DEFAULT '0' NOT NULL,
@@ -66,10 +63,10 @@ CREATE TABLE tx_cartography_point (
 # Table structure for table 'tt_content'
 #
 CREATE TABLE tt_content (
-  tx_cartography_point int(11) unsigned DEFAULT '0',
+  tx_cartography_feature int(11) unsigned DEFAULT '0',
 );
 
-CREATE TABLE tx_cartography_map_point_mm (
+CREATE TABLE tx_cartography_map_feature_mm (
   uid_local int(11) DEFAULT '0' NOT NULL,
   uid_foreign int(11) DEFAULT '0' NOT NULL,
   sorting int(11) DEFAULT '0' NOT NULL,
