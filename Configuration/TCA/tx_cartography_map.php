@@ -3,7 +3,7 @@ defined('TYPO3_MODE') or die();
 
 $tx_cartography_map = array(
     'ctrl' => array(
-        'title' => 'Map',
+        'title' => 'LLL:EXT:cartography/Resources/Private/Language/locallang_db.xlf:cartography.map.title',
         'label' => 'title',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -12,17 +12,17 @@ $tx_cartography_map = array(
         'origUid' => 't3_origuid',
         'delete' => 'deleted',
         'editlock' => 'editlock',
-        //'useColumnsForDefaultValues' => 'doktype,fe_group,hidden',
         'enablecolumns' => array(
             'disabled' => 'hidden',
             'starttime' => 'starttime',
             'endtime' => 'endtime',
             'fe_group' => 'fe_group'
-        )
+        ),
+        'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('cartography') . 'Resources/Public/Images/Map.png',
     ),
     'columns' => array(
         'title' => array(
-            'label' => 'Title (not visible in frontend)',
+            'label' => 'LLL:EXT:cartography/Resources/Private/Language/locallang_db.xlf:cartography.map.maptitle',
             'config' => array(
                 'type' => 'input',
                 'size' => '50',
@@ -31,7 +31,7 @@ $tx_cartography_map = array(
             )
         ),
         'features' => array(
-            'label' => 'Features',
+            'label' => 'LLL:EXT:cartography/Resources/Private/Language/locallang_db.xlf:cartography.map.features',
             'config' => array(
                 'type' => 'select',
                 'allowed' => 'tx_cartography_feature',
@@ -56,7 +56,7 @@ $tx_cartography_map = array(
         ),
         'hidden' => array(
             'exclude' => 1,
-            'label' => 'Hide map',
+            'label' => 'LLL:EXT:cartography/Resources/Private/Language/locallang_db.xlf:cartography.map.hide',
             'config' => array(
                 'type' => 'check',
                 'default' => '1',
@@ -118,7 +118,7 @@ $tx_cartography_map = array(
         ),
     ),
     'types' => array(
-        '0' => array('showitem' => '--div--;LLL:EXT:cartography/Resources/Private/Language/locallang_db.xlf:cartography_map.tabs.general, title, features, --div--;LLL:EXT:cartography/Resources/Private/Language/locallang_db.xlf:tx_cartography_map.tabs.access, hidden, starttime, endtime, editlock, fe_group')
+        '0' => array('showitem' => '--div--;LLL:EXT:cartography/Resources/Private/Language/locallang_db.xlf:cartography.tabs.general, title, features, --div--;LLL:EXT:cartography/Resources/Private/Language/locallang_db.xlf:cartography.tabs.access, hidden, starttime, endtime, editlock, fe_group')
     )
 );
 

@@ -1,7 +1,7 @@
 <?php
 namespace AM\Cartography\Domain\Model;
 
-class Point extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class Feature extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
     /**
      * @var \DateTime
@@ -46,28 +46,30 @@ class Point extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
     /**
      * @var string
      */
+    protected $featureType;
+
+    /**
+     * @var string
+     */
+    protected $info;
+
+
+    /**
+     * @var string
+     */
     protected $title;
-
-    /**
-     * @var string
-     */
-    protected $latitude;
-
-    /**
-     * @var string
-     */
-    protected $longitude;
-
-    /**
-     * @var string
-     */
-    protected $altitude;
 
     /**
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\AM\Cartography\Domain\Model\Map>
      * @lazy
      */
     protected $maps;
+
+    /**
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\AM\Cartography\Domain\Model\Coordinates>
+     * @lazy
+     */
+    protected $coordinates;
 
     /**
      * @var integer
@@ -81,10 +83,11 @@ class Point extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
     /**
      *
-     * @return \AM\Cartography\Domain\Model\Point
+     * @return \AM\Cartography\Domain\Model\Feature
      */
     public function __construct() {
         $this->maps = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
+        $this->coordinates = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
     }
 
     /**
@@ -123,6 +126,13 @@ class Point extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
     }
 
     /**
+     * @return string
+     */
+    public function getFeatureType() {
+        return $this->featureType;
+    }
+
+    /**
      * @return boolean
      */
     public function isHidden() {
@@ -153,22 +163,8 @@ class Point extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
     /**
      * @return string
      */
-    public function getLatitude() {
-        return $this->latitude;
-    }
-
-    /**
-     * @return string
-     */
-    public function getLongitude() {
-        return $this->longitude;
-    }
-
-    /**
-     * @return string
-     */
-    public function getAltitude() {
-        return $this->altitude;
+    public function getInfo() {
+        return $this->info;
     }
 
     /**
@@ -191,6 +187,14 @@ class Point extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
      */
     public function getMaps() {
         return $this->maps;
+    }
+
+    /**
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\AM\Cartography\Domain\Model\Coordinates>
+     */
+    public function getCoordinates() {
+        return $this->coordinates;
     }
 
 }

@@ -31,13 +31,32 @@ EOD
         $GLOBALS['TSFE']->pSetup['jsFooterInline.'][$contentObjectRenderer->data['uid'] . '.'] = array(
             'value' =>
 <<<EOD
+
                 var $mapIdentifier;
+                var infowindow = new google.maps.InfoWindow();
                 function initMap$mapIdentifier() {
                     $mapIdentifier = new google.maps.Map(document.getElementById('$mapIdentifier'), {
                         center: {lat: $settings[centerLat], lng: $settings[centerLng]},
                         zoom: $settings[zoom]
                     });
                     $mapIdentifier.data.loadGeoJson('/index.php?type=5000&uid=$settings[mapUid]');
+                    $mapIdentifier.data.addListener('click', function(event) {
+                        infowindow.setContent(event.feature.getProperty("info"));
+                        switch (event.feature.getGeometry().getType()) {
+                            case "Point":
+                                infowindow.setPosition(event.feature.getGeometry().get());
+                                break;
+                            case "LineString":
+                                infowindow.setPosition(event.feature.getGeometry().getAt(0));
+                                break;
+                            case "Polygon":
+
+                                infowindow.setPosition(event.feature.getGeometry().getAt(0).getAt(0));
+                                break;
+                        }
+
+                        infowindow.open($mapIdentifier);
+                    });
                 }
                 google.maps.event.addDomListener(window, 'load', initMap$mapIdentifier);
 EOD

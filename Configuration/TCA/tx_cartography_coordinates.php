@@ -1,9 +1,9 @@
 <?php
 defined('TYPO3_MODE') or die();
 
-$tx_cartography_coordinate = array(
+$tx_cartography_coordinates = array(
     'ctrl' => array(
-        'title' => 'Coordinate',
+        'title' => 'LLL:EXT:cartography/Resources/Private/Language/locallang_db.xlf:cartography.coordinates.title',
         'label' => 'latitude',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -12,11 +12,12 @@ $tx_cartography_coordinate = array(
         'origUid' => 't3_origuid',
         'delete' => 'deleted',
         'editlock' => 'editlock',
-        //'useColumnsForDefaultValues' => 'doktype,fe_group,hidden',
+        'hideTable' => TRUE,
+        'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('cartography') . 'Resources/Public/Images/Coordinates.png',
     ),
     'columns' => array(
         'latitude' => array(
-            'label' => 'Latitude',
+            'label' => 'LLL:EXT:cartography/Resources/Private/Language/locallang_db.xlf:cartography.coordinates.latitude',
             'config' => array(
                 'type' => 'input',
                 'size' => '20',
@@ -25,7 +26,7 @@ $tx_cartography_coordinate = array(
             )
         ),
         'longitude' => array(
-            'label' => 'Longitude',
+            'label' => 'LLL:EXT:cartography/Resources/Private/Language/locallang_db.xlf:cartography.coordinates.longitude',
             'config' => array(
                 'type' => 'input',
                 'size' => '20',
@@ -34,27 +35,14 @@ $tx_cartography_coordinate = array(
             )
         ),
         'altitude' => array(
-            'label' => 'Altitude',
+            'label' => 'LLL:EXT:cartography/Resources/Private/Language/locallang_db.xlf:cartography.coordinates.altitude',
             'config' => array(
                 'type' => 'input',
                 'size' => '20',
                 'max' => '12',
-                'eval' => 'trim,required'
+                'eval' => 'trim'
             )
         ),
-        'feature' => array(
-            'label' => 'Feature',
-            'config' => array(
-                'type' => 'select',
-                'allowed' => 'tx_cartography_feature',
-                'foreign_table' => 'tx_cartography_feature',
-                'MM' => 'tx_cartography_feature_coordinate_mm',
-                'size' => 10,
-                'minitems' => 0,
-                'maxitems' => 9999
-            )
-        ),
-
         'editlock' => array(
             'exclude' => 1,
             'label' => 'LLL:EXT:lang/locallang_tca.xlf:editlock',
@@ -73,4 +61,4 @@ $tx_cartography_coordinate = array(
     )
 );
 
-return $tx_cartography_coordinate;
+return $tx_cartography_coordinates;

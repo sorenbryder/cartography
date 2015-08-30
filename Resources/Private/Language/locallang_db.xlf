@@ -3,11 +3,56 @@
     <file source-language="en" datatype="plaintext" original="messages" date="2015-08-07T20:51:25Z" product-name="cartography">
         <header/>
         <body>
-            <trans-unit id="cartography_map.tabs.general" xml:space="preserve">
+            <trans-unit id="cartography.tabs.general" xml:space="preserve">
 				<source>General</source>
 			</trans-unit>
-            <trans-unit id="cartography_map.tabs.access" xml:space="preserve">
+            <trans-unit id="cartography.tabs.access" xml:space="preserve">
 				<source>Access</source>
+			</trans-unit>
+            <trans-unit id="cartography.coordinates.title" xml:space="preserve">
+				<source>Coordinates</source>
+			</trans-unit>
+            <trans-unit id="cartography.coordinates.latitude" xml:space="preserve">
+				<source>Latitude</source>
+			</trans-unit>
+            <trans-unit id="cartography.coordinates.longitude" xml:space="preserve">
+				<source>Longitude</source>
+			</trans-unit>
+            <trans-unit id="cartography.coordinates.altitude" xml:space="preserve">
+				<source>Altitude</source>
+			</trans-unit>
+            <trans-unit id="cartography.feature.title" xml:space="preserve">
+				<source>Feature</source>
+			</trans-unit>
+            <trans-unit id="cartography.feature.feature_type" xml:space="preserve">
+				<source>Type</source>
+			</trans-unit>
+            <trans-unit id="cartography.feature.featuretitle" xml:space="preserve">
+				<source>Title (not visible in frontend)</source>
+			</trans-unit>
+            <trans-unit id="cartography.feature.coordinates" xml:space="preserve">
+				<source>Coordinates</source>
+			</trans-unit>
+            <trans-unit id="cartography.feature.maps" xml:space="preserve">
+				<source>Maps</source>
+			</trans-unit>
+            <trans-unit id="cartography.feature.info" xml:space="preserve">
+				<source>Info</source>
+			</trans-unit>
+            <trans-unit id="cartography.feature.hide" xml:space="preserve">
+				<source>Visibility</source>
+			</trans-unit>
+            <trans-unit id="cartography.map.title" xml:space="preserve">
+				<source>Map</source>
+			</trans-unit>
+            <trans-unit id="cartography.map.features" xml:space="preserve">
+				<source>Features</source>
+			</trans-unit>
+            <trans-unit id="cartography.map.hide" xml:space="preserve">
+				<source>Visibility</source>
+			</trans-unit>
+            <trans-unit id="cartography.map.maptitle" xml:space="preserve">
+				<source>Title (not visible in frontend)</source>
 			</trans-unit>
         </body>
     </file>
