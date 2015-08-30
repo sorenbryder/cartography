@@ -1,7 +1,7 @@
 <?php
 namespace AM\Cartography\Domain\Model;
 
-class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
+class Coordinates extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
     /**
      * @var \DateTime
@@ -12,26 +12,6 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
      * @var \DateTime
      */
     protected $tstamp;
-
-    /**
-     * @var \DateTime
-     */
-    protected $starttime;
-
-    /**
-     * @var \DateTime
-     */
-    protected $endtime;
-
-    /**
-     * @var string
-     */
-    protected $feGroup;
-
-    /**
-     * @var boolean
-     */
-    protected $hidden;
 
     /**
      * @var boolean
@@ -46,7 +26,17 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
     /**
      * @var string
      */
-    protected $title;
+    protected $latitude;
+
+    /**
+     * @var string
+     */
+    protected $longitude;
+
+    /**
+     * @var string
+     */
+    protected $altitude;
 
     /**
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\AM\Cartography\Domain\Model\Feature>
@@ -66,7 +56,7 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
     /**
      *
-     * @return \AM\Cartography\Domain\Model\Map
+     * @return \AM\Cartography\Domain\Model\Coordinates
      */
     public function __construct() {
         $this->features = new \TYPO3\CMS\Extbase\Persistence\ObjectStorage();
@@ -87,34 +77,6 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
     }
 
     /**
-     * @return \DateTime
-     */
-    public function getStarttime() {
-        return $this->starttime;
-    }
-
-    /**
-     * @return \DateTime
-     */
-    public function getEndtime() {
-        return $this->endtime;
-    }
-
-    /**
-     * @return string
-     */
-    public function getFeGroup() {
-        return $this->feGroup;
-    }
-
-    /**
-     * @return boolean
-     */
-    public function isHidden() {
-        return $this->hidden;
-    }
-
-    /**
      * @return boolean
      */
     public function isDeleted() {
@@ -128,11 +90,26 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
         return $this->cruserId;
     }
 
+
     /**
      * @return string
      */
-    public function getTitle() {
-        return $this->title;
+    public function getLatitude() {
+        return $this->latitude;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLongitude() {
+        return $this->longitude;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAltitude() {
+        return $this->altitude;
     }
 
     /**
@@ -151,7 +128,7 @@ class Map extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity {
 
     /**
      *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\AM\Cartography\Domain\Model\Feature>
      */
     public function getFeatures() {
         return $this->features;

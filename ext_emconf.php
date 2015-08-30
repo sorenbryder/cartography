@@ -11,7 +11,7 @@ $EM_CONF[$_EXTKEY] = array (
     'clearcacheonload' => true,
     'author' => 'Søren Bryder Nielsen',
     'author_email' => 'soerenb@gmail.com',
-    'author_company' => 'Alex Murphy',
+    'author_company' => '',
     'constraints' =>
         array (
             'depends' =>

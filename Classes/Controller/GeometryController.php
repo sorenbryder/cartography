@@ -10,7 +10,7 @@ use \TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use \TYPO3\CMS\Core\Cache\Frontend\AbstractFrontend;
 use \AM\Cartography\Domain\Repository\MapRepository;
 use \AM\Cartography\Service\GeoJSONService;
-
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 
 class GeometryController extends ActionController {
@@ -60,15 +60,21 @@ class GeometryController extends ActionController {
     public function geoJSONAction() {
         $geoJson = '{}';
         if (is_numeric($uid = GeneralUtility::_GP('uid'))) {
-            if ($this->frontend->get($uid) == FALSE) {
-                if (!is_null($map = $this->mapRepository->findByIdentifier($uid))) {
-                    $geoJson = $this->geoJSONService->convertPointsToGeoJSON($map->getPoints());
+
+            // Don't return anything, not even cached entry, if the map is not in the repository
+            if (!is_null($map = $this->mapRepository->findByIdentifier($uid))) {
+                if ($GLOBALS['TSFE']->sys_page->versioningPreview) {
+                    $geoJson = $this->geoJSONService->generateFeatureCollectionGeoJSON($map->getFeatures());
+                } else if ($this->frontend->get($uid) == FALSE) {
+                    $geoJson = $this->geoJSONService->generateFeatureCollectionGeoJSON($map->getFeatures());
                     $this->frontend->set($uid, $geoJson);
+                } else {
+                    $geoJson = $this->frontend->get($uid);
                 }
-            } else {
-                $geoJson = $this->frontend->get($uid);
             }
+
         }
+
         return $geoJson;
     }
 
