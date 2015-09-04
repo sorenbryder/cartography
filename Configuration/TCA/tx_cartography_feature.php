@@ -50,6 +50,7 @@ $tx_cartography_feature = array(
                 'type' => 'inline',
                 'foreign_table' => 'tx_cartography_coordinates',
                 'foreign_field' => 'feature',
+                'foreign_sortby' => 'sorting',
                 'minitems' => 3,
                 'maxitems' => 9999,
                 'appearance' => array(
