@@ -67,13 +67,23 @@
                         <TCEforms>
                             <label>Center Lng</label>
                             <config>
-
                                 <default></default>
                                 <type>input</type>
                                 <size>15</size>
                             </config>
                         </TCEforms>
                     </settings.centerLng>
+                    <settings.snazzy>
+                        <TCEforms>
+                            <label>Snazzy styles</label>
+                            <config>
+                                <default></default>
+                                <type>text</type>
+                                <cols>30</cols>
+                                <rows>10</rows>
+                            </config>
+                        </TCEforms>
+                    </settings.snazzy>
                 </el>
             </ROOT>
         </sDEF>

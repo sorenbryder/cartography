@@ -19,8 +19,8 @@ class GoogleMaps implements MapProviderInterface {
             'value' =>
 <<<EOD
                 .google-maps {
-                    width: 500px;
-                    height: 500px;
+                    width: 800px;
+                    height: 600px;
                 }
 EOD
 
@@ -37,7 +37,8 @@ EOD
                 function initMap$mapIdentifier() {
                     $mapIdentifier = new google.maps.Map(document.getElementById('$mapIdentifier'), {
                         center: {lat: $settings[centerLat], lng: $settings[centerLng]},
-                        zoom: $settings[zoom]
+                        zoom: $settings[zoom],
+                        styles: $settings[snazzy]
                     });
                     $mapIdentifier.data.loadGeoJson('/index.php?type=5000&uid=$settings[mapUid]');
                     $mapIdentifier.data.addListener('click', function(event) {
