@@ -11,31 +11,31 @@
 Administrator manual
 ====================
 
-Describes how to manage the extension from an administrator’s point of
-view. That relates to Page/User TSconfig, permissions, configuration
-etc., which administrator level users have access to.
-
-Language should be non/semi-technical, explaining, using small
-examples.
-
-Target group: **Administrators**
-
-
 Installation
 ------------
 
-How should the extension be set up? E.g. is there a static template to include?
+Install extension using the Extension Manager. The extension will automatically add the required TypoScript.
 
-.. figure:: ../Images/AdministratorManual/ExtensionManager.png
-	:width: 500px
-	:alt: Extension Manager
+Extenstion settings
+-------------------
 
-	Extension Manager (caption of the image)
+typeNum
+^^^^^^^
+By default the extension will use typeNum 5000 for GeoJSON output. GeoJSON output for a map entry can be accessed by the following URL pattern:
+domain.com/index.php?type={typeNum}&uid={uid_of_map}
 
-	List of extensions within the Extension Manager also shortend as "EM" (legend of the image)
+If you don't change the typeNum it will be the following to get GeoJSON for the map with uid 1:
+domain.com/index.php?type=5000&uid=1
 
+Include JavaScript automatically
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The extension automatically includes the required JavaScript where the map plugin is inserted. If eg. Google Maps is used as map provider for a plugin inserted on a page, the required Google Maps JavaScript will only be included on the page where the plugin is inserted. If JavaScript shouldn't be included automatically you can disabled it in the extension settings.
 
-FAQ
-^^^
+TSConfig
+-------------------
 
-Possible subsection: FAQ
+Altitude property for coordinates is disabled by default. If you need to enable altitude set the following setting on your root page in "Page TSConfig". You can also set it on a sub page if you only want to enable altitude for a sub section of your page tree.
+
+.. figure:: ../Images/7.png
+	:width: 879px
+	:alt: Google Map example

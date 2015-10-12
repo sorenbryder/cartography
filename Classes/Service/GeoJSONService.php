@@ -4,7 +4,6 @@ namespace AM\Cartography\Service;
 
 use AM\Cartography\Domain\Model\Feature;
 use \TYPO3\CMS\Extbase\Persistence\ObjectStorage;
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 class GeoJSONService {
 
@@ -45,8 +44,8 @@ class GeoJSONService {
         $coordinatesArray = array();
         foreach ($feature->getCoordinates() as $coordinates) {
             $coordinatesArray[] = array(
-                (float) $coordinates->getLatitude(),
                 (float) $coordinates->getLongitude(),
+                (float) $coordinates->getLatitude(),
                 (float) $coordinates->getAltitude()
             );
         }

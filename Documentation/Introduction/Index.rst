@@ -9,30 +9,27 @@
 What does it do?
 ================
 
-First of all, if you have any idea how this template can be improved, please, drop a note to our team_. Documentation is written in reST format. Please, refer to Help writing reStructuredText to get some insight regarding syntax and existing reST editors on the market.
+Cartography helps you genreate clean GeoJSON and diplay interactive frontend maps. The extension has two main puposes:
 
-.. _team: http://forge.typo3.org/projects/typo3v4-official_extension_template/issues
-
-Here should be given a brief overview of the extension. What does it do? What problem does it solve? Who is interested in this? Basically the document includes everything people need to know to decide, if they should go on with this extension.
-
-.. figure:: ../Images/IntroductionPackage.png
-	:width: 500px
-	:alt: Introduction Package
-
-	Introduction Package just after installation (caption of the image)
-
-	How the Frontend of the Introduction Package looks like just after installation (legend of the image)
+1. Construct maps with points, lines, polygons and infowindows and generate clean GeoJSON.
+2. Use GeoJSON to display interactive maps in the frontend using a map provider, eg Google Maps or Google Maps with Snazzy styles.
 
 Screenshots
 ===========
 Frontend Map - Google Maps example
 ----------------------------------
-.. figure:: ../Images/screencapture-map-sbn-1441314972522.png
+.. figure:: ../Images/1.png
+	:width: 800px
+	:alt: Google Maps provider example
+
+Frontend Map - Snazzy Maps example
+----------------------------------
+.. figure:: ../Images/4.png
 	:width: 800px
 	:alt: Google Maps provider example
 
 Backend Map
 -----------
-.. figure:: ../Images/screencapture-map-sbn-typo3-index-php-1441313157618.png
+.. figure:: ../Images/5.png
 	:width: 879px
 	:alt: Google Map example

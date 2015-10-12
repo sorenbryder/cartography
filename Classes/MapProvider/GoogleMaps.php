@@ -19,8 +19,8 @@ class GoogleMaps implements MapProviderInterface {
             'value' =>
 <<<EOD
                 .google-maps {
-                    width: 800px;
-                    height: 600px;
+                    width: $settings[width];
+                    height: $settings[height];
                 }
 EOD
 

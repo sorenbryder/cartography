@@ -55,7 +55,7 @@
                     </settings.zoom>
                     <settings.centerLat>
                         <TCEforms>
-                            <label>Center Lat</label>
+                            <label>Center latitude</label>
                             <config>
                                 <default></default>
                                 <type>input</type>
@@ -65,7 +65,7 @@
                     </settings.centerLat>
                     <settings.centerLng>
                         <TCEforms>
-                            <label>Center Lng</label>
+                            <label>Center longitude</label>
                             <config>
                                 <default></default>
                                 <type>input</type>
@@ -73,6 +73,26 @@
                             </config>
                         </TCEforms>
                     </settings.centerLng>
+                    <settings.width>
+                        <TCEforms>
+                            <label>Width</label>
+                            <config>
+                                <default></default>
+                                <type>input</type>
+                                <size>15</size>
+                            </config>
+                        </TCEforms>
+                    </settings.width>
+                    <settings.height>
+                        <TCEforms>
+                            <label>Height</label>
+                            <config>
+                                <default></default>
+                                <type>input</type>
+                                <size>15</size>
+                            </config>
+                        </TCEforms>
+                    </settings.height>
                     <settings.snazzy>
                         <TCEforms>
                             <label>Snazzy styles</label>

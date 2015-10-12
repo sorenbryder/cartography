@@ -15,6 +15,8 @@ class MapController extends ActionController {
         $this->settings['centerLat'] = $this->settings['centerLat'] ?: '50';
         $this->settings['centerLng'] = $this->settings['centerLng'] ?: '10';
         $this->settings['zoom'] = $this->settings['zoom'] ?: '4';
+        $this->settings['width'] = $this->settings['width'] ?: '600px';
+        $this->settings['height'] = $this->settings['height'] ?: '600px';
         $this->settings['snazzy'] = $this->settings['snazzy'] ?: '[]';
 
         // Render map
