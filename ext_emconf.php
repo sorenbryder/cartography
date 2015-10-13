@@ -4,7 +4,7 @@ $EM_CONF[$_EXTKEY] = array (
     'title' => 'Cartography',
     'description' => '',
     'category' => 'fe',
-    'version' => '1.0',
+    'version' => '1.0.0',
     'state' => 'stable',
     'uploadfolder' => true,
     'createDirs' => NULL,
@@ -16,7 +16,7 @@ $EM_CONF[$_EXTKEY] = array (
         array (
             'depends' =>
                 array (
-                    'typo3' => '7.4.0',
+                    'typo3' => '7.4.0-7.5.99',
                 ),
             'conflicts' =>
                 array (
