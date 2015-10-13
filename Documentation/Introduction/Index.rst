@@ -1,4 +1,4 @@
-﻿.. ==================================================
+.. ==================================================
 .. FOR YOUR INFORMATION
 .. --------------------------------------------------
 .. -*- coding: utf-8 -*- with BOM.
@@ -9,7 +9,7 @@
 What does it do?
 ================
 
-Cartography helps you genreate clean GeoJSON and diplay interactive frontend maps. The extension has two main puposes:
+Cartography helps you generate clean GeoJSON and display interactive frontend maps. The extension has two main purposes:
 
 1. Construct maps with points, lines, polygons and infowindows and generate clean GeoJSON.
 2. Use GeoJSON to display interactive maps in the frontend using a map provider, eg Google Maps or Google Maps with Snazzy styles.
@@ -33,3 +33,9 @@ Backend Map
 .. figure:: ../Images/5.png
 	:width: 879px
 	:alt: Google Map example
+
+Feedback
+========
+Please report all issues, bugs, and requests on GitHub:
+
+https://github.com/sorenbryder/cartography

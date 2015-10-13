@@ -15,7 +15,7 @@ Cartography
 .. only:: html
 
 	:Classification:
-		extension_key
+		cartography
 
 	:Version:
 		|release|
@@ -24,10 +24,10 @@ Cartography
 		en
 
 	:Description:
-		enter description.
+		Cartography helps you generate clean GeoJSON and diplay interactive frontend maps
 
 	:Keywords:
-		comma,separated,list,keywords
+		maps, google, snazzy, geojson
 
 	:Copyright:
 		2015
